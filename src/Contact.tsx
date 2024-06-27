@@ -11,7 +11,7 @@ const aPartyY = height/2;
 const nodeSize = 32;
 const ringGap = 3
 const aToBDistance = 400
-const widthOfCountText = 5;
+const widthOfCountText = 8;
 
 const data = {
     aParty: '07883957738',
@@ -33,9 +33,9 @@ export const Contact = () => {
 
                 <circle r={nodeSize + ringGap} cx={aPartyX} cy={aPartyY} stroke={aPartyColor} fill="none"/>
 
-                <path d={`M${aPartyX + nodeSize + ringGap},${aPartyY} L${aToBDistance - nodeSize - ringGap},${aPartyY}`}
-                      stroke={aPartyColor}></path>
-                <text x={((aPartyX + aToBDistance) / 2) - widthOfCountText} y={aPartyY - 5}>{data.count}</text>
+                <path d={`M${aPartyX + nodeSize + ringGap},${aPartyY} C${aPartyX + nodeSize + ringGap+30},${aPartyY-7} ${aToBDistance-nodeSize-ringGap-30},${aPartyY-7} ${aToBDistance - nodeSize - ringGap},${aPartyY}`}
+                      stroke={aPartyColor} fill="none"></path>
+                <text x={((aPartyX + aToBDistance) / 2) - widthOfCountText} y={aPartyY - 14}>{data.count}</text>
 
                 <g transform={`translate(${aPartyX -50},${aPartyY -12}) scale(0.7 0.7)`}>
 
